@@ -166,7 +166,7 @@
 <blockquote>
 <h3 id="JavaScript-——-静态方法"><a href="#JavaScript-——-静态方法" class="headerlink" title="JavaScript —— 静态方法"></a>JavaScript —— 静态方法</h3></blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 静态方法(只可用【构造函数】名字调用，不可用【实例对象】名字调用)</span></span><br><span class="line">Player.turnover = function () &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;我会失误&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">Player.turnover();</span><br><span class="line">curry.turnover();	<span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/2021021508473082.png" alt="在这里插入图片描述"></p>
+<p><img src="https://www.hualigs.cn/image/6077c6ba972a5.jpg" alt="在这里插入图片描述"></p>
 <blockquote>
 <h3 id="JavaScript-——-实例化对象"><a href="#JavaScript-——-实例化对象" class="headerlink" title="JavaScript —— 实例化对象"></a>JavaScript —— 实例化对象</h3></blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let curry = <span class="keyword">new</span> Player(<span class="string">&#x27;库里&#x27;</span>, <span class="number">21</span>);</span><br><span class="line">let young = <span class="keyword">new</span> Player(<span class="string">&#x27;杨&#x27;</span>, <span class="number">21</span>);</span><br></pre></td></tr></table></figure>
@@ -178,16 +178,16 @@
 <h3 id="JavaScript-——-对象原型"><a href="#JavaScript-——-对象原型" class="headerlink" title="JavaScript —— 对象原型"></a>JavaScript —— 对象原型</h3><p>（为什么实例化出来的对象能调用Player.prototype【原型对象】上的shot方法呢，是因为每个实例化出来的对象中都包含有一个__proto__【对象原型】，而这个对象原型__proto__指向Player.prototype原型对象）</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">console.log(curry);</span><br><span class="line"><span class="comment">// 打印：curry.__proto__ === Player.prototype: true</span></span><br><span class="line">console.log(`curry.__proto__ === Player.prototype: $&#123;curry.__proto__ === Player.prototype&#125;`);</span><br><span class="line"><span class="comment">// 只要是对象就有__proto__原型,指向原型对象(prototype)</span></span><br><span class="line"><span class="comment">// Player.prototype.__proto__指向的是Object.prototype</span></span><br><span class="line"><span class="comment">// 而Object.__proto__指向的是 null</span></span><br><span class="line">console.log(Player.prototype.__proto__ === Object.prototype);	<span class="comment">// 打印：true</span></span><br><span class="line">console.log(Object.prototype.__proto__);						<span class="comment">// 打印：null</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20210215090220887.png" alt="console.log(curry);"></p>
+<p><img src="https://www.hualigs.cn/image/6077c6ba98086.jpg" alt="console.log(curry);"></p>
 <blockquote>
 <h3 id="JavaScript-——-构造函数属性"><a href="#JavaScript-——-构造函数属性" class="headerlink" title="JavaScript —— 构造函数属性"></a>JavaScript —— 构造函数属性</h3><p>（对象原型(<strong>proto</strong>) 和 原型对象(prototype)里面都有一个属性constructor(构造函数)属性，它指回构造函数本身，主要用于记录对象【引用于哪个构造函数】，当我们用下列方式为Player.prototype(原型对象)添加方法的时候，需要手动添加constructor属性让Player.prototype指回原来的构造函数）</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Player.prototype = &#123;</span><br><span class="line">	constructor: Player,</span><br><span class="line">	shot: function () &#123; &#125;,</span><br><span class="line">	turnover: function () &#123; &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(Player.prototype.constructor);</span><br><span class="line">console.log(curry.__proto__.constructor);</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20210215091153381.png" alt="console.log(Player.prototype.constructor);console.log(curry.__proto__.constructor);"></p>
+<p><img src="https://www.hualigs.cn/image/6077c6ba9a089.jpg" alt="console.log(Player.prototype.constructor);console.log(curry.__proto__.constructor);"></p>
 <blockquote>
 <p>JavaScript —— 原型链</p>
 </blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20210215100213514.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyMTQyMw==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><img src="https://www.hualigs.cn/image/6077c6ba9e430.jpg" alt="在这里插入图片描述"></p>
 
       
 
@@ -201,81 +201,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/04/14/JavaScript-%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B-%E2%80%94%E2%80%94/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2021/04/14/hello-world/" class="archive-article-date">
-  	<time datetime="2021-04-14T15:17:21.060Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/14/hello-world/">展开全文 >></a>
         </p>
       
 
