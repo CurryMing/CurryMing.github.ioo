@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>JavaScript 原型对象、对象原型 —— { } | Hexo</title>
+  <title>JavaScript 原型对象、对象原型 —— { } | codeorange</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="JavaScript —— 构造函数 12345&#x2F;&#x2F; 构造函数function Player(name, age) &amp;#123;    this.name &#x3D; name;    this.age &#x3D; age;&amp;#125;  JavaScript —— 静态方法 123456&#x2F;&#x2F; 静态方法(只可用【构造函数】名字调用，不可用【实例对象】名字调用)Player.turnover &#x3D; function">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 原型对象、对象原型 —— { }">
 <meta property="og:url" content="http://example.com/2021/04/14/JavaScript-%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B-%E2%80%94%E2%80%94/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="codeorange">
 <meta property="og:description" content="JavaScript —— 构造函数 12345&#x2F;&#x2F; 构造函数function Player(name, age) &amp;#123;    this.name &#x3D; name;    this.age &#x3D; age;&amp;#125;  JavaScript —— 静态方法 123456&#x2F;&#x2F; 静态方法(只可用【构造函数】名字调用，不可用【实例对象】名字调用)Player.turnover &#x3D; function">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2021021508473082.png">
@@ -21,11 +21,11 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210215100213514.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyMTQyMw==,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2021-04-14T15:23:31.000Z">
 <meta property="article:modified_time" content="2021-04-14T15:26:42.632Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="codeorange">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/2021021508473082.png">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="codeorange" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -64,8 +64,6 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
-	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -84,13 +82,11 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="Github" target="_blank" href="https://github.com/CurryMing" title="Github"><i class="icon-Github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="Gitee" target="_blank" href="https://gitee.com/o_Ming" title="Gitee"><i class="icon-Gitee"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="CSDN" target="_blank" href="https://blog.csdn.net/weixin_43921423" title="CSDN"><i class="icon-CSDN"></i></a>
 		        
 			</div>
 		</nav>
@@ -118,20 +114,16 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="Github" target="_blank" href="https://github.com/CurryMing" title="Github"><i class="icon-Github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="Gitee" target="_blank" href="https://gitee.com/o_Ming" title="Gitee"><i class="icon-Gitee"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="CSDN" target="_blank" href="https://blog.csdn.net/weixin_43921423" title="CSDN"><i class="icon-CSDN"></i></a>
 			        
 				</div>
 			</nav>
@@ -140,9 +132,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -343,7 +333,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 John Doe
+    		&copy; 2021 codeorange
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
