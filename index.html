@@ -25,7 +25,7 @@
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: linear-gradient(to right top, #6bd1c3, #57ccd1, #4dc6dd, #52bfe6, #65b6ea, #66b9ef, #68bcf3, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);;
     }
   </style>
   
@@ -59,8 +59,6 @@
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
     			
             
     			
@@ -141,13 +139,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/14/JavaScript-%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B-%E2%80%94%E2%80%94/">JavaScript 原型对象、对象原型 —— { }</a>
+      <a class="article-title" href="/2021/04/15/JavaScript-%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B-%E2%80%94%E2%80%94/">JavaScript 原型对象、对象原型 —— { }</a>
     </h1>
   
 
         
-        <a href="/2021/04/14/JavaScript-%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B-%E2%80%94%E2%80%94/" class="archive-article-date">
-  	<time datetime="2021-04-14T15:23:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-14</time>
+        <a href="/2021/04/15/JavaScript-%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B-%E2%80%94%E2%80%94/" class="archive-article-date">
+  	<time datetime="2021-04-15T15:23:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-15</time>
 </a>
         
       </header>
@@ -156,33 +154,9 @@
       
         <blockquote>
 <h3 id="JavaScript-——-构造函数"><a href="#JavaScript-——-构造函数" class="headerlink" title="JavaScript —— 构造函数"></a>JavaScript —— 构造函数</h3></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line"><span class="function">function <span class="title">Player</span><span class="params">(name, age)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<h3 id="JavaScript-——-静态方法"><a href="#JavaScript-——-静态方法" class="headerlink" title="JavaScript —— 静态方法"></a>JavaScript —— 静态方法</h3></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 静态方法(只可用【构造函数】名字调用，不可用【实例对象】名字调用)</span></span><br><span class="line">Player.turnover = function () &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;我会失误&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">Player.turnover();</span><br><span class="line">curry.turnover();	<span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://www.hualigs.cn/image/6077c6ba972a5.jpg" alt="在这里插入图片描述"></p>
-<blockquote>
-<h3 id="JavaScript-——-实例化对象"><a href="#JavaScript-——-实例化对象" class="headerlink" title="JavaScript —— 实例化对象"></a>JavaScript —— 实例化对象</h3></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let curry = <span class="keyword">new</span> Player(<span class="string">&#x27;库里&#x27;</span>, <span class="number">21</span>);</span><br><span class="line">let young = <span class="keyword">new</span> Player(<span class="string">&#x27;杨&#x27;</span>, <span class="number">21</span>);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<h3 id="JavaScript-——-原型对象"><a href="#JavaScript-——-原型对象" class="headerlink" title="JavaScript —— 原型对象"></a>JavaScript —— 原型对象</h3><p>（在构造函数中定义方法的话，每次当实例化对象的时候，每次都会在不同的地址上存储方法，而【原型对象】作用是把各个对象相同的方法都存放在同一个存储地址上（其实就只生成了一个方法），节省内存空间）</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Player.prototype.shot = function () &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;我会射球&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">curry.shot();</span><br><span class="line">young.shot();</span><br><span class="line"><span class="comment">// 打印：curry.shot === young.shot: true</span></span><br><span class="line">console.log(`curry.shot === young.shot: $&#123;curry.shot === young.shot&#125;`);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<h3 id="JavaScript-——-对象原型"><a href="#JavaScript-——-对象原型" class="headerlink" title="JavaScript —— 对象原型"></a>JavaScript —— 对象原型</h3><p>（为什么实例化出来的对象能调用Player.prototype【原型对象】上的shot方法呢，是因为每个实例化出来的对象中都包含有一个__proto__【对象原型】，而这个对象原型__proto__指向Player.prototype原型对象）</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">console.log(curry);</span><br><span class="line"><span class="comment">// 打印：curry.__proto__ === Player.prototype: true</span></span><br><span class="line">console.log(`curry.__proto__ === Player.prototype: $&#123;curry.__proto__ === Player.prototype&#125;`);</span><br><span class="line"><span class="comment">// 只要是对象就有__proto__原型,指向原型对象(prototype)</span></span><br><span class="line"><span class="comment">// Player.prototype.__proto__指向的是Object.prototype</span></span><br><span class="line"><span class="comment">// 而Object.__proto__指向的是 null</span></span><br><span class="line">console.log(Player.prototype.__proto__ === Object.prototype);	<span class="comment">// 打印：true</span></span><br><span class="line">console.log(Object.prototype.__proto__);						<span class="comment">// 打印：null</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://www.hualigs.cn/image/6077c6ba98086.jpg" alt="console.log(curry);"></p>
-<blockquote>
-<h3 id="JavaScript-——-构造函数属性"><a href="#JavaScript-——-构造函数属性" class="headerlink" title="JavaScript —— 构造函数属性"></a>JavaScript —— 构造函数属性</h3><p>（对象原型(<strong>proto</strong>) 和 原型对象(prototype)里面都有一个属性constructor(构造函数)属性，它指回构造函数本身，主要用于记录对象【引用于哪个构造函数】，当我们用下列方式为Player.prototype(原型对象)添加方法的时候，需要手动添加constructor属性让Player.prototype指回原来的构造函数）</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Player.prototype = &#123;</span><br><span class="line">	constructor: Player,</span><br><span class="line">	shot: function () &#123; &#125;,</span><br><span class="line">	turnover: function () &#123; &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(Player.prototype.constructor);</span><br><span class="line">console.log(curry.__proto__.constructor);</span><br></pre></td></tr></table></figure>
-<p><img src="https://www.hualigs.cn/image/6077c6ba9a089.jpg" alt="console.log(Player.prototype.constructor);console.log(curry.__proto__.constructor);"></p>
-<blockquote>
-<p>JavaScript —— 原型链</p>
-</blockquote>
-<p><img src="https://www.hualigs.cn/image/6077c6ba9e430.jpg" alt="在这里插入图片描述"></p>
-
+        
+          <a class="article-more-a" href="/2021/04/15/JavaScript-%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B-%E2%80%94%E2%80%94/#more">more >></a>
+        
       
 
       
@@ -190,11 +164,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/14/JavaScript-%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B-%E2%80%94%E2%80%94/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/04/15/JavaScript-%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B-%E2%80%94%E2%80%94/">展开全文 >></a>
         </p>
       
 
@@ -275,8 +260,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
-    
-      
       
       
     
@@ -287,8 +270,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
       
       <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
-      
-        
       
         
       
@@ -311,6 +292,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
