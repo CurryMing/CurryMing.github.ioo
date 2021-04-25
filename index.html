@@ -217,9 +217,9 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="蔡鸿洺-男"><a href="#蔡鸿洺-男" class="headerlink" title="蔡鸿洺 | 男"></a>蔡鸿洺 | 男</h3><ul>
-<li>22年应届生 | 本科</li>
-</ul>
+    <h3 id="蔡鸿洺-男-21岁"><a href="#蔡鸿洺-男-21岁" class="headerlink" title="蔡鸿洺 | 男 | 21岁"></a>蔡鸿洺 | 男 | 21岁</h3><!-- 
+<img src="https://www.hualigs.cn/image/608514e78f205.jpg" style="zoom:25%;position:absolute;right:100px;top:250px;">
+-->
     
     <a class="article-more-a" href="/2021/04/17/%E7%AE%80%E5%8E%86/#more">more >></a>
     
@@ -313,23 +313,9 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h6 id="初始化项目-项目会出现-package-json"><a href="#初始化项目-项目会出现-package-json" class="headerlink" title="初始化项目 (项目会出现 package.json)"></a>初始化项目 (项目会出现 package.json)</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
-
-<h6 id="安装一系列包"><a href="#安装一系列包" class="headerlink" title="安装一系列包"></a>安装一系列包</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack@<span class="number">4.44</span><span class="number">.2</span> -D</span><br><span class="line">npm i webpack-cli@<span class="number">3.3</span><span class="number">.12</span> -D</span><br><span class="line">npm i webpack-dev-server@<span class="number">3.11</span><span class="number">.2</span> -D</span><br><span class="line">npm i html-webpack-plugin@<span class="number">4.4</span><span class="number">.1</span> -D</span><br><span class="line">npm i copy-webpack-plugin@<span class="number">4.6</span><span class="number">.0</span> -D</span><br></pre></td></tr></table></figure>
-
-<h6 id="新建文件夹"><a href="#新建文件夹" class="headerlink" title="新建文件夹"></a>新建文件夹</h6><blockquote>
-<p>public: 用来放index.html、图片资源等<br>src: 用来放app.js等</p>
-</blockquote>
-<h6 id="新建-webpack-config-js-文件来配置webpack"><a href="#新建-webpack-config-js-文件来配置webpack" class="headerlink" title="新建 webpack.config.js 文件来配置webpack"></a>新建 webpack.config.js 文件来配置webpack</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&#x27;html-webpack-plugin&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> CopyWebpackPlugin = <span class="built_in">require</span>(<span class="string">&#x27;copy-webpack-plugin&#x27;</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">// 配置环境</span></span><br><span class="line">    mode: <span class="string">&#x27;development&#x27;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// </span></span><br><span class="line">    devtool: <span class="string">&#x27;source-map&#x27;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 配置入口</span></span><br><span class="line">    entry: &#123;</span><br><span class="line">        app: <span class="string">&#x27;./src/app.js&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 配置出口</span></span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.join(__dirname, <span class="string">&#x27;./dist&#x27;</span>),</span><br><span class="line">        filename: <span class="string">&#x27;app.js&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 配置插件</span></span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">            template: path.join(__dirname, <span class="string">&#x27;./public/index.html&#x27;</span>),</span><br><span class="line">            filename: <span class="string">&#x27;index.html&#x27;</span>,</span><br><span class="line">            inject: <span class="literal">true</span></span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="keyword">new</span> CopyWebpackPlugin([</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">from</span>: <span class="string">&#x27;public/orange.ico&#x27;</span>,</span><br><span class="line">                to: path.join(__dirname, <span class="string">&#x27;./dist&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        ])</span><br><span class="line">    ],</span><br><span class="line">    <span class="comment">// 配置server</span></span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: path.join(__dirname, <span class="string">&#x27;./dist&#x27;</span>),</span><br><span class="line">        compress: <span class="literal">true</span>,</span><br><span class="line">        port: <span class="number">8080</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="命令别名-修改-package-json-文件"><a href="#命令别名-修改-package-json-文件" class="headerlink" title="命令别名 (修改 package.json 文件)"></a>命令别名 (修改 package.json 文件)</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;test&quot;</span>: <span class="string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dev&quot;</span>: <span class="string">&quot;npx webpack-dev-server&quot;</span> <span class="comment">// 新增（在命令行输入 cnpm run dev）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="打包命令"><a href="#打包命令" class="headerlink" title="打包命令"></a>打包命令</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
+    
+    <a class="article-more-a" href="/2021/04/24/%E4%BD%BF%E7%94%A8webpack%E5%AF%B9Nodejs%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86/#more">more >></a>
+    
     
 
     
@@ -1229,7 +1215,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">前端 Vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">Nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1237,7 +1223,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">前端 Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端 Nodejs ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1246,14 +1240,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">我的</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端 Nodejs ajax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Nodejs</a>
               </li>
             
             <div class="clearfix"></div>
